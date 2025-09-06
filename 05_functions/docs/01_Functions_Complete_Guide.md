@@ -133,6 +133,50 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
+## Using *args and **kwargs in Python Functions
+
+### What are *args and **kwargs?
+- `*args` allows a function to accept any number of positional arguments as a tuple.
+- `**kwargs` allows a function to accept any number of keyword arguments as a dictionary.
+
+### Why use them?
+- They make your functions flexible and able to handle varying numbers of arguments.
+- Useful for writing generic, reusable code.
+
+### Example
+```python
+def secialChai(*ing, **extra):
+    print("Ingredients:", ing)      # Tuple of positional arguments
+    print("Extras:", extra)         # Dictionary of keyword arguments
+
+secialChai("chineman", "Cardmom", sweetner="honey", foam="yes")
+```
+**Output:**
+```
+Ingredients: ('chineman', 'Cardmom')
+Extras: {'sweetner': 'honey', 'foam': 'yes'}
+```
+
+### How it works
+- All positional arguments after the function name are collected into the tuple `ing`.
+- All keyword arguments are collected into the dictionary `extra`.
+
+### When to use
+- When you don’t know in advance how many arguments will be passed.
+- When you want to allow optional configuration via keywords.
+
+### Best Practices
+- Name them `*args` and `**kwargs` by convention, but any name works (e.g., `*ing`, `**extra`).
+- You can combine regular parameters, `*args`, and `**kwargs` in one function.
+
+### Advanced Usage
+You can also unpack arguments when calling functions:
+```python
+ingredients = ("ginger", "cinnamon")
+extras = {"sweetner": "jaggery", "foam": "no"}
+secialChai(*ingredients, **extras)
+```
+
 ---
 
 This guide covers all essential aspects of Python functions, types, return statements, importing/exporting, and scopes. Refer to this document for quick revision and deeper understanding.

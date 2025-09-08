@@ -101,5 +101,22 @@
 #recruisive func
 #lambdas(anonymouse func)
 
-def pure_chai(cups):
-    return cups*10
+# def pure_chai(cups):
+#     return cups*10
+
+
+cart = []
+
+while True:
+    input_product = input("Enter your product name (type 'done' to finish): ").lower()
+    
+    if input_product == "done":
+        break
+    
+    cart.append(input_product)
+    print(f"{input_product} added to the cart")
+
+# Final output
+print("\n🛒 Your Shopping Cart:")
+for item in cart:
+    print(f"- {item}")
